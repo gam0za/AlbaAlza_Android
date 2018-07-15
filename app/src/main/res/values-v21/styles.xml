@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AlbaAlza" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorForeground">@color/maincolor</item>
+        <item name="android:navigationBarColor">@color/maincolor</item>
+        <item name="android:statusBarColor">@color/maincolor</item>
+        <item name="android:textColorPrimary">@color/textcolor</item>
+        <item name="android:colorPrimaryDark">@color/maincolor</item>
+        <item name="colorAccent">@color/maincolor</item>
+    </style>
+</resources>
