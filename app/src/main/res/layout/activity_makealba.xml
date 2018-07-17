@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jinyoungkim.albaalza.UI.Alba.MyAlba.MakeAlbaActivity">
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--알바이름-->
+        <EditText
+            android:id="@+id/edit_albaname"
+            android:textSize="13sp"
+            android:hint="알바이름"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"/>
+
+        <!--시급-->
+        <EditText
+            android:layout_marginTop="30dp"
+            android:id="@+id/edit_timepay"
+            android:textSize="13sp"
+            android:hint="시급"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+
+        <!--급여일-->
+        <EditText
+            android:layout_marginTop="30dp"
+            android:id="@+id/edit_payday"
+            android:textSize="13sp"
+            android:hint="급여일"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+
+        <!--4대보험-->
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="33dp"
+            android:layout_gravity="center_vertical"
+            android:text="4대보험"
+            android:textSize="13sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="33dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@drawable/greenbox"
+                    android:id="@+id/insurance_yes"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp" />
+                <TextView
+                    android:layout_centerInParent="true"
+                    android:textColor="#ffffff"
+                    android:textSize="13sp"
+                    android:text="가입"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginLeft="15dp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@drawable/whitebox"
+                    android:id="@+id/insurance_no"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp" />
+                <TextView
+                    android:layout_centerInParent="true"
+                    android:textSize="13sp"
+                    android:text="미가입"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!--사장님 검색-->
+
+        <RelativeLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/edit_searchboss"
+                android:textSize="13sp"
+                android:hint="사장님 검색"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/btn_search"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/boss_search"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+        </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/btn_addalba"
+            android:src="@drawable/square"
+            android:layout_width="300dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"
+            android:textSize="13sp"
+            android:text="확인"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

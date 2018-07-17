@@ -2,7 +2,7 @@
 <resources>
 
     <style name="AlbaAlza" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:colorForeground">@color/maincolor</item>
+        <item name="android:colorForeground">@color/line</item>
         <item name="android:navigationBarColor">@color/maincolor</item>
         <item name="android:statusBarColor">@color/maincolor</item>
         <item name="android:textColorPrimary">@color/textcolor</item>

@@ -9,7 +9,7 @@
     </style>
 
     <style name="AlbaAlza" parent="Theme.AppCompat.Light.NoActionBar" >
-        <item name="android:colorForeground">@color/maincolor</item>
+        <item name="android:colorForeground">@color/line</item>
         <item name="android:textColorPrimary">@color/textcolor</item>
         <item name="colorAccent">@color/maincolor</item>
     </style>
