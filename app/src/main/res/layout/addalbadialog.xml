@@ -12,7 +12,7 @@
     android:orientation="vertical"
     android:layout_gravity="center"
     android:layout_width="300dp"
-    android:layout_height="400dp">
+    android:layout_height="430dp">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -27,12 +27,12 @@
         android:id="@+id/startPicker"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="130dp"
         android:timePickerMode="spinner"
         android:numbersBackgroundColor="@color/maincolor"></TimePicker>
 
     <TextView
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="40dp"
         android:text="종료 시간"
         android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
         android:id="@+id/endPicker"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="130dp"
         android:timePickerMode="spinner"
         android:numbersBackgroundColor="@color/maincolor"></TimePicker>
 
