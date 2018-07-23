@@ -29,4 +29,16 @@ dependencies {
     compile 'com.android.support:support-annotations:27.1.1'
     compile 'com.github.applikeysolutions:cosmocalendar:1.0.4'
     compile 'me.relex:circleindicator:1.2.2@aar'
+
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'com.android.support') {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion '26.1.0'
+                }
+            }
+        }
+    }
+
 }

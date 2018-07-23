@@ -1,14 +1,11 @@
 package com.example.jinyoungkim.albaalza.UI.Alba.MyAlba;
 
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,56 +19,77 @@ import java.util.List;
 import me.relex.circleindicator.CircleIndicator;
 
 public class MyAlbaFragment extends Fragment {
-    private SharedPreferences sharedPreferences;
-    private ViewPager viewPager;
-    public MyAlbaFragment() {
+
+    ViewPager viewPager;
+    MyAlba1Fragment myAlba1Fragment= new MyAlba1Fragment();
+    MyAlba2Fragment myAlba2Fragment= new MyAlba2Fragment();
+    MyAlba3Fragment myAlba3Fragment= new MyAlba3Fragment();
+
+    public MyAlbaFragment(){
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view= inflater.inflate(R.layout.fragment_myalba, container, false);
+        viewPager=(ViewPager)view.findViewById(R.id.viewpager);
 
-        View view = inflater.inflate(R.layout.fragment_myalba, container, false);
-//        viewpager
-        viewPager = (ViewPager)view.findViewById(R.id.viewpager);
-        viewPager.setAdapter(new pagerAdapter(getActivity().getSupportFragmentManager()));
         viewPager.setCurrentItem(0);
-
+        viewPager.setOffscreenPageLimit(3);
+        CircleIndicator indicator = (CircleIndicator) view.findViewById(R.id.indicator);
+        indicator.setViewPager(viewPager);
         return view;
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        setupViewPager(viewPager);
+    }
 
-    private class pagerAdapter extends FragmentPagerAdapter {
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager());
+        viewPagerAdapter.addFragment(myAlba1Fragment);
+        viewPagerAdapter.addFragment(myAlba2Fragment);
+        viewPagerAdapter.addFragment(myAlba3Fragment);
+        viewPager.setAdapter(viewPagerAdapter);
+    }
 
-        public pagerAdapter(FragmentManager fm) {
+    private class ViewPagerAdapter extends FragmentPagerAdapter {
+
+        List<Fragment> fragmentList = new ArrayList<>();
+
+        public ViewPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
         @Override
         public Fragment getItem(int position) {
-            if(position ==0 ){
-                return new MyAlba1Fragment();
-            }else if(position ==1){
-                return new MyAlba2Fragment();
-            }else{
-                return new MyAlba3Fragment();
-            }
+            return fragmentList.get(position);
         }
 
         @Override
         public int getCount() {
-            return 3;
+            return fragmentList.size();
         }
+
+        public void addFragment(Fragment fragment) {
+            fragmentList.add(fragment);
+        }
+
     }
 
+    public ViewPager getViewPager(){
+        return viewPager;
+    }
 
-
-
-
+    public MyAlba1Fragment getMyAlba1Fragment(){
+        return myAlba1Fragment;
+    }
 }
