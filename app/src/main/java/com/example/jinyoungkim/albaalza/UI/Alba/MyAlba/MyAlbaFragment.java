@@ -62,7 +62,7 @@ public class MyAlbaFragment extends Fragment {
     }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {
- 
+
         List<Fragment> fragmentList = new ArrayList<>();
 
         public ViewPagerAdapter(FragmentManager fm) {
